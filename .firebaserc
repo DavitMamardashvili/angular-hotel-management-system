@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "aerbnb-afd48": {
+      "hosting": {
+        "angular-hotel-management-system": [
+          "aerbnb-afd48"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "aerbnb-afd48"
+  }
+}
