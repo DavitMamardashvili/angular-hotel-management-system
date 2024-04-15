@@ -1,0 +1,10 @@
+.error-message {
+  color: #f44336; /* Red color for error text */
+  font-size: 0.75rem; /* Font size (can be adjusted) */
+  text-align: end;
+}
+
+.error-message::ng-deep .mat-error {
+  color: #f44336; /* Red color for error text */
+  font-size: 0.75rem; /* Font size (can be adjusted) */
+}

@@ -10,11 +10,13 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { envoerment } from '../envoerment/envoerment';
+// import { ErrorMessageComponent } from './shared/components/error-message/error-message.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    // ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,

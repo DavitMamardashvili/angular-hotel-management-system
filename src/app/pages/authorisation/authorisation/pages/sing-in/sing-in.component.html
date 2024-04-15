@@ -1,0 +1,42 @@
+<section>
+    <article>
+        <h2>{{'singIn'| translate}}</h2>
+        <hr class="custom-hr">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <label>{{'email'| translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'email'| translate}}</mat-label>
+                <input type="email" matInput placeholder="{{'email'| translate}}" ngModel name="email" required
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                <mat-error *ngIf="validator.checkBaseValue(form, 'email') == 1">{{'emailRequerdMessage'|
+                    translate}}</mat-error>
+                <mat-error *ngIf="validator.checkBaseValue(form, 'email') == 3">{{'invalidEmailMessage'|
+                    translate}}</mat-error>
+            </mat-form-field>
+
+            <label>{{'password'| translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'password'| translate}}</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" ngModel name="password" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{8,}$">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error
+                *ngIf="validator.checkPasswordValue(form, 'password') == 1">{{'passwordRequerdMessage'|translate}}</mat-error>
+                <mat-error
+                *ngIf="validator.checkPasswordValue(form, 'password') == 2">{{'simbolsErrorMessage'|translate}}</mat-error>
+            <mat-error
+                *ngIf="validator.checkPasswordValue(form, 'password') == 3">{{'passwordPatternMessage'|translate}}</mat-error>
+            </mat-form-field>
+
+            <button type="submit"  mat-raised-button class="mt-4 example-full-width">{{'singIn'| translate}}</button>
+
+            <div class="btn-area">
+                <a type="Link" mat-button (click)="onResetPasswordBtnClick()">{{'forgotPassword'| translate}}</a>
+                <a mat-button routerLink="/auth/register">{{'register'| translate}}</a>
+            </div>
+        </form>
+    </article>
+</section>
