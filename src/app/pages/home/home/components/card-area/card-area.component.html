@@ -1,3 +1,4 @@
-<section>
-    <app-hotel-card></app-hotel-card>
+<section class="container" fxLayout="row" fxLayout.gt-sm="row" fxLayout.xs="column" fxLayoutAlign.gt-sm="start start"
+    fxLayoutAlign.xs="center center">
+    <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel" class="mb-2"></app-hotel-card>
 </section>

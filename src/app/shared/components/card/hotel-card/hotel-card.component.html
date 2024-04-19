@@ -1,1 +1,69 @@
-<p>hotel-card works!</p>
+
+<div class="home_card" *ngIf="hotel">
+    <div class="card_box">
+        <div class="wrapper" [ngStyle]="{ left: hotel?.current * -286 + 'px' }">
+            <img class="home_img" *ngFor="let image of hotel?.images" src="{{ image.url }}" />
+        </div>
+        <div class="control">
+            <div>
+                <div (click)="prev()" class="btn" *ngIf="hotel?.current > 0">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                        focusable="false" style="
+                display: block;
+                fill: none;
+                height: 12px;
+                width: 12px;
+                stroke: currentcolor;
+                stroke-width: 4;
+                overflow: visible;
+              ">
+                        <g fill="none">
+                            <path
+                                d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <div (click)="next()" class="btn" *ngIf="hotel?.current < hotel?.images?.length - 1">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                        focusable="false" style="
+                display: block;
+                fill: none;
+                height: 12px;
+                width: 12px;
+                stroke: currentcolor;
+                stroke-width: 4;
+                overflow: visible;
+              ">
+                        <g fill="none">
+                            <path
+                                d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="circle">
+            <span *ngFor="let image of hotel.images; index as i" [ngClass]="hotel.current === i ? 'active' : ''"></span>
+        </div>
+    </div>
+    <h4>{{ hotel.address?.city }}, {{ hotel.address?.country }}</h4>
+    <div class="home_rating">
+        <img src="../../../../../assets/images/star_360.png" alt="" />
+        {{ hotel.rating }}
+    </div>
+    <div class="home_location">
+        {{ hotel.address?.street }}, {{ hotel.address?.city }}
+    </div>
+    <div class="home_description">{{ hotel.description }}</div>
+    <div class="home_price">
+        <strong>
+            <span class="price"></span> {{ hotel.rooms?.[0]?.pricePerNight }}
+        </strong>
+        night
+    </div>
+    <button class="reserve_btn">reserve now</button>
+</div>
