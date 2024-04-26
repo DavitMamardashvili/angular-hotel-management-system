@@ -10,27 +10,26 @@ import { forkJoin, map } from 'rxjs';
 export class HotelCardComponent  {
   @Input() hotel: any;
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http:HttpClient){}
   ngOnInit(): void {
     this.hotel.current = 0;
-    if (this.hotel.images.length < 4) {
-      this.fetchUnsplashImages(this.hotel, 4 - this.hotel.images.length).subscribe();
-    }
+    // if (this.hotel.images.length < 4) {
+    //   this.fetchUnsplashImages(this.hotel, 4 - this.hotel.images.length).subscribe();
+    // }
   }
 
-  fetchUnsplashImages(hotel: any, count: number) {
-    const apiKey = 'NVm0woD0X5eU_DCxPFK0_3WcyyVZajPKKlW4-_u548Q';
-    const apiUrl = `https://api.unsplash.com/photos/random?count=${count}&client_id=${apiKey}`;
-    return this.http.get(apiUrl).pipe(
-      map((response: any) => {
-        const unsplashImages = response.map((image: any) => ({
-          url: image.urls.regular,
-        }));
-        hotel.images = [...hotel.images, ...unsplashImages];
-      })
-    );
-  }
+  // fetchUnsplashImages(hotel: any, count: number) {
+  //   const apiKey = 'NVm0woD0X5eU_DCxPFK0_3WcyyVZajPKKlW4-_u548Q';
+  //   const apiUrl = `https://api.unsplash.com/photos/random?count=${count}&client_id=${apiKey}`;
+  //   return this.http.get(apiUrl).pipe(
+  //     map((response: any) => {
+  //       const unsplashImages = response.map((image: any) => ({
+  //         url: image.urls.regular,
+  //       }));
+  //       hotel.images = [...hotel.images, ...unsplashImages];
+  //     })
+  //   );
+  // }
 
   next() {
     this.hotel.current++;

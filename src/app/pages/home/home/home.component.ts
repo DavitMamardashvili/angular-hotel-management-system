@@ -7,25 +7,23 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  // hotels: any[] = [];
+  hotels: any[] = [];
 
-  // constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  // ngOnInit(): void {
-  //   this.fetchHotels();
-  // }
+  ngOnInit(): void {
+    this.fetchHotels();
+  }
 
-  // fetchHotels() {
-  //   this.http.get('http://www.airbnb-digital-students.somee.com/get-all-hotels')
-  //     .subscribe(
-  //       (response: any) => {
-  //         console.log("get hotels")
-  //         console.log(response)
-  //         this.hotels = response;
-  //       },
-  //       (error) => {
-  //         console.error('Error fetching hotels:', error);
-  //       }
-  //     ); 
-  // }
+  fetchHotels() {
+    this.http.get('http://www.airbnb-digital-students.somee.com/get-all-hotels')
+      .subscribe(
+        (response: any) => {
+          this.hotels = response;
+        },
+        (error) => {
+          console.error('Error fetching hotels:', error);
+        }
+      ); 
+  }
 }
