@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { FilterComponent } from './home/components/filter/filter.component';
 import { CardAreaComponent } from './home/components/card-area/card-area.component';
 import { HotelCardComponent } from '../../shared/components/card/hotel-card/hotel-card.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { HotelCardComponent } from '../../shared/components/card/hotel-card/hote
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

@@ -1,1 +1,26 @@
-<p>filter works!</p>
+<section class="container">
+    <form #form="ngForm" >
+      <div class="dropdown">
+        <span class="title">Amenities:</span>
+        <select ngModel name="amenities" class="dropdown_ul">
+          <option *ngFor="let amenities of objectForFilterArea.amenities" class="list_item">{{ amenities }}</option>
+        </select>
+      </div>
+  
+      <div class="dropdown">
+        <span class="title">City:</span>
+        <select ngModel name="city" class="dropdown_ul">
+          <option *ngFor="let city of objectForFilterArea.city" class="list_item">{{ city }}</option>
+        </select>
+      </div>
+  
+      <div class="dropdown">
+        <span class="title">Room Type:</span>
+        <select ngModel name="roomType" class="dropdown_ul">
+          <option *ngFor="let roomType of objectForFilterArea.roomType" class="list_item">{{ roomType }}</option>
+        </select>
+      </div>
+      <button type="submit" class="search" (click)="onFormSubmit(form)" >Submit</button>
+    </form>
+  </section>
+  
