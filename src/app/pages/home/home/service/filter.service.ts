@@ -7,14 +7,15 @@ export class FilterService {
   private objectForFilterArea: any = {
     amenities: [],
     city: [] ,
-    roomType: []
+    roomType: [],
+    rating : []
   };
 
   populateFilterArea(data: any[]) {
     this.extractUniqueAmenitiesFromRooms(data);
     this.extractUniqueCitiesFromRooms(data);
     this.extractUniqueRoomTypesFromRooms(data);
-
+    this.Raiting(data)
     return this.objectForFilterArea;
   }
 
@@ -53,6 +54,19 @@ export class FilterService {
             this.objectForFilterArea.roomType.push(room.roomType);
           }
         });
+      }
+    });
+  }
+
+
+
+  private Raiting(data: any[]) {
+    data.forEach((item: any) => {
+      if (item.rating ) {
+        const rating = item.rating;
+        if (!this.objectForFilterArea.rating.includes(rating)) {
+          this.objectForFilterArea.rating.push(rating);
+        }
       }
     });
   }

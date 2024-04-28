@@ -1,26 +1,187 @@
-<section class="container">
-    <form #form="ngForm" >
-      <div class="dropdown">
-        <span class="title">Amenities:</span>
-        <select ngModel name="amenities" class="dropdown_ul">
-          <option *ngFor="let amenities of objectForFilterArea.amenities" class="list_item">{{ amenities }}</option>
-        </select>
-      </div>
+   <section class="container">
+    <form>
+      <!-- Accommodation -->
+      <span
+        class="dropdown"
+        (click)="filterVisible.toggleDropdown(1)"
+        [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 1"
+      >
+        <span class="title">Accommodation</span>
+        <img src="./assets/images/accommodation.png" alt="" />
+        <ul
+          class="dropdown_ul two-columns wider"
+          [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 1 }"
+          (click)="filterSelectedUi.handleDropdownClick($event, 'accommodation')"
+          data-option="dropdown_ul"
+        >
+          <li
+            class="list_item"
+            [class.selected]="filterSelectedUi.filtermodel.roomType.includes(accommodation)"
+            [attr.data-option]="accommodation"
+            *ngFor="let accommodation of objectForFilterArea.roomType"
+          >
+            {{ accommodation }}
+          </li>
+          <li
+            class="list_item"
+            [class.selected]="filterSelectedUi.filtermodel.roomType.includes('show more +')"
+            data-option="show more +"
+            (click)="filterVisible.toggleMoreItems('accommodation')"
+          >
+            {{ filterVisible.filterVisibalModel.showMore }}
+          </li>
+        </ul>
+      </span>
   
-      <div class="dropdown">
-        <span class="title">City:</span>
-        <select ngModel name="city" class="dropdown_ul">
-          <option *ngFor="let city of objectForFilterArea.city" class="list_item">{{ city }}</option>
-        </select>
-      </div>
+      <!-- Rating -->
+      <span
+        class="dropdown"
+        (click)="filterVisible.toggleDropdown(2)"
+        [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 2"
+      >
+        <span class="title">rating</span>
+        <img src="./assets/images/hotelrating.png" alt="" />
+        <ul
+          class="dropdown_ul two-columns"
+          [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 2 }"
+          (click)="filterSelectedUi.handleDropdownClick($event, 'rating')"
+          data-option="dropdown_ul"
+        >
+          <li
+            class="list_item span_all"
+            [class.selected]="filterSelectedUi.filtermodel.minRating === 'any'"
+            data-option="any"
+          >
+            any
+          </li>
+          <li
+            class="list_item rating"
+            [class.selected]="filterSelectedUi.filtermodel.minRating === rating.toString()"
+            [attr.data-option]="rating"
+            *ngFor="let rating of objectForFilterArea.rating"
+          >
+            <img
+              [src]="
+                filterSelectedUi.filtermodel.minRating === rating.toString()
+                  ? './assets/images/star1.png'
+                  : './assets/images/star2.png'
+              "
+              alt=""
+            />
   
-      <div class="dropdown">
-        <span class="title">Room Type:</span>
-        <select ngModel name="roomType" class="dropdown_ul">
-          <option *ngFor="let roomType of objectForFilterArea.roomType" class="list_item">{{ roomType }}</option>
-        </select>
-      </div>
-      <button type="submit" class="search" (click)="onFormSubmit(form)" >Submit</button>
+            {{ rating }}
+          </li>
+        </ul>
+      </span>
+  
+      <!-- Amenities -->
+      <span
+        class="dropdown"
+        (click)="filterVisible.toggleDropdown(4)"
+        [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 4"
+      >
+        <span class="title">amenities</span>
+        <img src="./assets/images/amenity2.png" alt="" />
+        <ul
+          class="dropdown_ul two-columns wider"
+          [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 4 }"
+          (click)="filterSelectedUi.handleDropdownClick($event, 'amenity')"
+          data-option="dropdown_ul"
+        >
+          <li
+            class="list_item span_all"
+            [class.selected]="filterSelectedUi.filtermodel.amenities.includes('any')"
+            data-option="any"
+          >
+            any
+          </li>
+          <li
+            class="list_item"
+            [class.selected]="filterSelectedUi.filtermodel.amenities.includes(amenity)"
+            [attr.data-option]="amenity"
+            *ngFor="let amenity of objectForFilterArea.amenities"
+          >
+            {{ amenity }}
+          </li>
+          <li
+            class="list_item"
+            [class.selected]="filterSelectedUi.filtermodel.amenities.includes('show more +')"
+            data-option="show more +"
+            (click)="filterVisible.toggleMoreItems('amenity')"
+          >
+            {{ filterVisible.filterVisibalModel.showMore }}
+          </li>
+        </ul>
+      </span>
+  
+      <!-- Price Range -->
+      <span
+        class="dropdown"
+        (click)="filterVisible.toggleDropdown(6)"
+        [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 6"
+      >
+        <span class="title">Price Range </span>
+        <img src="./assets/images/priceRange.png" alt="" />
+        <ul
+          class="dropdown_ul"
+          [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 6 }"
+          (click)="filterSelectedUi.handleDropdownClick($event, 'price range')"
+          data-option="dropdown_ul"
+        >
+          <li
+            data-option="price-range"
+          >
+            <input
+              type="range"
+              min="120"
+              max="1000"
+              [value]="filterSelectedUi.filtermodel.maxPricePerNight"
+              (change)="filterSelectedUi.updateSelectedMaxPrice($event)"
+              data-option="price-range"
+            />
+
+            <div
+              class="price-range-value"
+              data-option="price-range"
+            >
+              ${{ filterSelectedUi.filtermodel.maxPricePerNight }}
+            </div>
+          </li>
+        </ul>
+      </span>
+  
+      <!-- Location Search -->
+      <span
+        class="dropdown"
+        (click)="filterVisible.toggleDropdown(7)"
+        [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 7"
+      >
+        <span class="title">Location</span>
+        <img src="./assets/images/location.png" alt="" />
+        <ul
+          class="dropdown_ul two-columns wider"
+          [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 7 }"
+          (click)="filterSelectedUi.handleDropdownClick($event, 'location')"
+          data-option="dropdown_ul"
+        >
+          <li
+            class="list_item"
+            [class.selected]="filterSelectedUi.filtermodel.city === location"
+            [attr.data-option]="location"
+            *ngFor="let location of objectForFilterArea.city"
+          >
+            {{ location }}
+          </li>
+          <li
+            class="list_item"
+            [class.selected]="filterSelectedUi.filtermodel.city.includes('show more +')"
+            data-option="show more +"
+            (click)="filterVisible.toggleMoreItems('location')"
+          >
+            {{ filterVisible.filterVisibalModel.showMore }}
+          </li>
+        </ul>
+      </span>
+      <button class="search" (click)="onFormSubmit()">search</button>
     </form>
   </section>
-  

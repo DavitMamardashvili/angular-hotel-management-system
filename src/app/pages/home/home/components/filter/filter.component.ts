@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FilterSelectedUiService } from '../../service/filter-selected-ui.service';
+import { FilterVisibalUiService } from '../../service/filter-visibal-ui.service';
+import { FilterModel } from '../models/FilterModel';
 
 @Component({
   selector: 'app-filter',
@@ -9,17 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FilterComponent {
   @Input() objectForFilterArea: any;
-  @Output() filterData: EventEmitter<NgForm> = new EventEmitter<NgForm>
+  @Output() filterData: EventEmitter<FilterModel> = new EventEmitter<FilterModel>
+  PriceRange:string = '';
 
-  activeDropdown: number = -1;
+  constructor(public filterSelectedUi :FilterSelectedUiService , public filterVisible:FilterVisibalUiService){}
 
-
-  onFormSubmit(form: NgForm) {
-    this.filterData.emit(form);
-  }
-
-  toggleDropdown(index: number) {
-    this.activeDropdown = this.activeDropdown === index ? -1 : index;
+  onFormSubmit() {
+  this.filterData.emit(this.filterSelectedUi.filtermodel)
   }
 
 }
