@@ -16,7 +16,8 @@ export class FilterService {
     this.extractUniqueCitiesFromRooms(data);
     this.extractUniqueRoomTypesFromRooms(data);
     this.Raiting(data)
-    return this.objectForFilterArea;
+    this.sortObjectForFilterArea()
+    return this.objectForFilterArea // from min to max
   }
 
   private extractUniqueAmenitiesFromRooms(data: any[]) {
@@ -67,6 +68,15 @@ export class FilterService {
         if (!this.objectForFilterArea.rating.includes(rating)) {
           this.objectForFilterArea.rating.push(rating);
         }
+      }
+    });
+  }
+
+  private sortObjectForFilterArea(): void {
+    // Sort each array property of objectForFilterArea
+    Object.keys(this.objectForFilterArea).forEach(key => {
+      if (Array.isArray(this.objectForFilterArea[key])) {
+        this.objectForFilterArea[key].sort();
       }
     });
   }

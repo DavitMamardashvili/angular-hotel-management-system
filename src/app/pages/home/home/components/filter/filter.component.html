@@ -15,21 +15,23 @@
           data-option="dropdown_ul"
         >
           <li
-            class="list_item"
-            [class.selected]="filterSelectedUi.filtermodel.roomType.includes(accommodation)"
+          *ngFor="let accommodation of (filterVisible.filterVisibalModel.showMoreAccommodation ? objectForFilterArea.roomType.slice(0, 7) : objectForFilterArea.roomType);"
+                      class="list_item"
             [attr.data-option]="accommodation"
-            *ngFor="let accommodation of objectForFilterArea.roomType"
+            [class.selected]="isSelected(accommodation)"
+
           >
             {{ accommodation }}
           </li>
+
           <li
             class="list_item"
             [class.selected]="filterSelectedUi.filtermodel.roomType.includes('show more +')"
             data-option="show more +"
-            (click)="filterVisible.toggleMoreItems('accommodation')"
+            (click)="filterVisible.showMore(0)"
           >
-            {{ filterVisible.filterVisibalModel.showMore }}
-          </li>
+          {{ filterVisible.filterVisibalModel.showMoreAccommodation ? 'show more +' : 'show less -' }}   
+               </li>
         </ul>
       </span>
   
@@ -99,7 +101,7 @@
             class="list_item"
             [class.selected]="filterSelectedUi.filtermodel.amenities.includes(amenity)"
             [attr.data-option]="amenity"
-            *ngFor="let amenity of objectForFilterArea.amenities"
+            *ngFor="let amenity of (filterVisible.filterVisibalModel.showMoreAmenity ? objectForFilterArea.amenities.slice(0, 7) : objectForFilterArea.amenities);"
           >
             {{ amenity }}
           </li>
@@ -107,9 +109,9 @@
             class="list_item"
             [class.selected]="filterSelectedUi.filtermodel.amenities.includes('show more +')"
             data-option="show more +"
-            (click)="filterVisible.toggleMoreItems('amenity')"
+            (click)="filterVisible.showMore(1)"
           >
-            {{ filterVisible.filterVisibalModel.showMore }}
+            {{  filterVisible.filterVisibalModel.showMoreAmenity ? 'show more +' : 'show less -'}}
           </li>
         </ul>
       </span>
@@ -168,17 +170,18 @@
             class="list_item"
             [class.selected]="filterSelectedUi.filtermodel.city === location"
             [attr.data-option]="location"
-            *ngFor="let location of objectForFilterArea.city"
+            *ngFor="let location of (filterVisible.filterVisibalModel.showMoreLocation ? objectForFilterArea.city.slice(0, 7) : objectForFilterArea.city);"
+
           >
             {{ location }}
           </li>
           <li
             class="list_item"
-            [class.selected]="filterSelectedUi.filtermodel.city.includes('show more +')"
+            [class.selected]="filterSelectedUi.filtermodel.amenities.includes('show more +')"
             data-option="show more +"
-            (click)="filterVisible.toggleMoreItems('location')"
+            (click)="filterVisible.showMore(2)"
           >
-            {{ filterVisible.filterVisibalModel.showMore }}
+          {{  filterVisible.filterVisibalModel.showMoreLocation ? 'show more +' : 'show less -'}}
           </li>
         </ul>
       </span>

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { FilterModel } from '../components/models/FilterModel';
+import { FilterModel } from '../models/FilterModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterSelectedUiService {
-  filtermodel:FilterModel = new FilterModel()
+  filtermodel: FilterModel = new FilterModel()
 
   toggleOption(option: string, type: string) {
     switch (type) {

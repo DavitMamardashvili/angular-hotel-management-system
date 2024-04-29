@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilterVisibalModel } from '../components/models/FilterVisibalModel';
+import { FilterVisibalModel } from '../models/FilterVisibalModel';
 
 @Injectable({
   providedIn: 'root'
@@ -8,39 +8,25 @@ export class FilterVisibalUiService {
 
   filterVisibalModel:FilterVisibalModel = new FilterVisibalModel()
 
-  toggleMoreItems(type: string) {
-      switch (type) {
-        case 'amenity':
-          if (this.filterVisibalModel.visibleAmenities.length === 9) {
-            this.filterVisibalModel.visibleAmenities = this.filterVisibalModel.amenityItems;
-            this.filterVisibalModel.showMore = 'show less -';
-          } else {
-            this.filterVisibalModel.visibleAmenities = this.filterVisibalModel.amenityItems.slice(0, 9);
-            this.filterVisibalModel.showMore = 'show more +';
-          }
-          break;
-        case 'accommodation':
-          if (this.filterVisibalModel.visibleAccommodations.length === 7) {
-            this.filterVisibalModel.visibleAccommodations = this.filterVisibalModel.accommodationItems;
-            this.filterVisibalModel.showMore = 'show less -';
-          } else {
-            this.filterVisibalModel.visibleAccommodations = this.filterVisibalModel.accommodationItems.slice(0, 7);
-            this.filterVisibalModel.showMore = 'show more +';
-          }
-          break;
-        case 'location':
-          if (this.filterVisibalModel.visibleLocations.length === 7) {
-            this.filterVisibalModel.visibleLocations = this.filterVisibalModel.locationItems;
-            this.filterVisibalModel.showMore = 'show less -';
-          } else {
-            this.filterVisibalModel.visibleLocations = this.filterVisibalModel.locationItems.slice(0, 7);
-            this.filterVisibalModel.showMore = 'show more +';
-          }
-          break;
-      }
-    }
-
     toggleDropdown(index: number) {
       this.filterVisibalModel.activeDropdown = this.filterVisibalModel.activeDropdown === index ? -1 : index;
     }
+
+    showMore(num: number): void {
+      switch (num) {
+        case 0:
+          this.filterVisibalModel.showMoreAccommodation = !this.filterVisibalModel.showMoreAccommodation;
+          break;
+        case 1:
+          this.filterVisibalModel.showMoreAmenity = !this.filterVisibalModel.showMoreAmenity;
+          break;
+        case 2:
+          this.filterVisibalModel.showMoreLocation = !this.filterVisibalModel.showMoreLocation;
+          break;
+        default:
+          console.error("Invalid value for 'num'. Expected values: 0, 1, or 2.");
+          break;
+      }
+    }
 }
+

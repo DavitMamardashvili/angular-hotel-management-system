@@ -96,7 +96,10 @@ img {
   background: rgb(82, 143, 242);
   color: white;
 }
-
+.X{
+  background: rgb(82, 143, 242);
+  color: white;
+}
 .list_item:hover {
   outline: none;
   background: rgb(82, 143, 242);

@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
 import { FilterService } from './service/filter.service';
-import { combineLatest, delay, forkJoin, of, switchMap } from 'rxjs';
-import { FilterModel } from './components/models/FilterModel';
+import {  delay, of, switchMap } from 'rxjs';
+import { FilterModel } from './models/FilterModel';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.http.get('http://www.airbnb-digital-students.somee.com/get-all-hotels')
       .subscribe((response: any) => {
         this.hotels = response;
-        this.objectForFilterArea = this.filterService.populateFilterArea(response);
+        this.objectForFilterArea = this.filterService.populateFilterArea(response)
       },
         (error) => {
           console.error('Error fetching hotels:', error);
@@ -44,8 +43,8 @@ export class HomeComponent implements OnInit {
   getFilterData(event: any) {
     let baseUrl = 'http://www.airbnb-digital-students.somee.com/api/Apartments/filter';
     const filteredParams = Object.entries(event)
-      .filter(([key, value]) => value !== undefined && value !== '')
-      .map(([key, value]) => `${key}=${encodeURIComponent(value as string)}`);
+      .filter(([key, value]) => value !== undefined && value !== '' && value !== 'show more +' && value !== 'show less -') 
+      .map(([key, value]) => `${key}=${encodeURIComponent(value as string)}`)
 
     if (filteredParams.length > 0) {
       baseUrl += '?' + filteredParams.join('&');
