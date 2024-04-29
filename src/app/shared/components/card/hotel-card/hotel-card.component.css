@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  --main-red: rgba(255, 57, 92, 255);
+  --main-gray: rgba(113, 113, 113, 1);
+  --navigation-color: rgba(243, 241, 234, 255);
+  --navigation-texts-color: rgba(100, 100, 100, 1);
+}
+
+
+.home_card {
+  height: 450px;
+  width: 289px;
+  cursor: pointer;
+  position: relative;
+}
+
+.card_box {
+  position: relative;
+  width: 286px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_box .control {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card_box:hover .control {
+  opacity: 1;
+}
+
+.btn {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+
+.home_img {
+  height: 302px;
+  width: 286px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.circle {
+  bottom: 10px;
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  z-index: 999;
+}
+
+.circle span {
+  width: 7px;
+  height: 7px;
+  background: rgb(228, 227, 227);
+  border-radius: 100%;
+}
+
+.circle .active {
+  background-color: #fff;
+}
+
+h4 {
+  margin: initial;
+  padding: 5px 0;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.home_rating {
+  position: absolute;
+  right: -11px;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.home_rating>img {
+  height: 20px;
+  vertical-align: sub;
+  cursor: pointer;
+}
+
+.home_description,
+.home_location,
+.home_price {
+  color: rgba(0, 0, 0, 0.538);
+  font-size: 14px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.home_description {
+  height: 60px;
+  text-align: start;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.home_location {
+  margin-bottom: 5px;
+}
+
+.home_price .price::before {
+  content: "\0024";
+}
+
+strong {
+  color: black;
+}
+
+.reserve_btn {
+  padding: 5px 10px;
+  background: rgb(92, 154, 255);
+  background-color: rgba(218, 13, 100, 255);
+  color: aliceblue;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  right: 15px;
+  bottom: 3px;
+  transition: 0.2s;
+}
+.reserve_btn:hover {
+  background-color: rgb(66, 133, 244);
+  background: rgba(255, 13, 100, 255);
+
+  border: none;
+}
