@@ -7,7 +7,8 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 1"
       >
         <span class="title">Accommodation</span>
-        <img src="./assets/images/accommodation.png" alt="" />
+        <!-- <img src="./assets/images/accommodation.png" alt="" /> -->
+        <img src="../../../../../../assets/images/filter-images/accommodation_360.png" alt="" />
         <ul
           class="dropdown_ul two-columns wider"
           [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 1 }"
@@ -42,7 +43,9 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 2"
       >
         <span class="title">rating</span>
-        <img src="./assets/images/hotelrating.png" alt="" />
+        <!-- <img src="./assets/images/hotelrating.png" alt="" /> -->
+        <img src="../../../../../../assets/images/filter-images/hotelrating_360.png" alt="" />
+
         <ul
           class="dropdown_ul two-columns"
           [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 2 }"
@@ -62,14 +65,18 @@
             [attr.data-option]="rating"
             *ngFor="let rating of objectForFilterArea.rating"
           >
-            <img
+            <!-- <img
               [src]="
                 filterSelectedUi.filtermodel.minRating === rating.toString()
                   ? './assets/images/star1.png'
                   : './assets/images/star2.png'
               "
               alt=""
-            />
+            /> -->
+            <img
+            src="../../../../../../assets/images/filter-images/star1_360.png"
+            alt=""
+          />
   
             {{ rating }}
           </li>
@@ -83,7 +90,8 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 4"
       >
         <span class="title">amenities</span>
-        <img src="./assets/images/amenity2.png" alt="" />
+        <!-- <img src="./assets/images/amenity2.png" alt="" /> -->
+        <img src="../../../../../../assets/images/filter-images/amenity2_360.png" alt="" />
         <ul
           class="dropdown_ul two-columns wider"
           [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 4 }"
@@ -123,7 +131,9 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 6"
       >
         <span class="title">Price Range </span>
-        <img src="./assets/images/priceRange.png" alt="" />
+        <!-- <img src="./assets/images/priceRange.png" alt="" /> -->
+        <img src="../../../../../../assets/images/filter-images/pricerange_360.png" alt="" />
+
         <ul
           class="dropdown_ul"
           [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 6 }"
@@ -159,7 +169,9 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 7"
       >
         <span class="title">Location</span>
-        <img src="./assets/images/location.png" alt="" />
+        <!-- <img src="./assets/images/location.png" alt="" /> -->
+        <img src="../../../../../../assets/images/filter-images/location_360.png" alt="" />
+
         <ul
           class="dropdown_ul two-columns wider"
           [ngClass]="{ show: filterVisible.filterVisibalModel.activeDropdown === 7 }"
