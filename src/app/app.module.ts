@@ -12,6 +12,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { envoerment } from '../envoerment/envoerment';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatMenuModule,
   
 
     TranslateModule.forRoot(
