@@ -127,7 +127,9 @@ export class AppComponent {
 
   constructor(private translateService: TranslateService, private fireAuth: AngularFireAuth) {
     this.translateService.setDefaultLang('eng');
-    this.translateService.use(localStorage.getItem('lang') || 'eng')
+    this.translateService.use(localStorage.getItem('lang') || 'eng');
+
+
 
   }
 
