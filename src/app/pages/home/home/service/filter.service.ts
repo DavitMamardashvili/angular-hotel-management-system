@@ -15,9 +15,9 @@ export class FilterService {
     this.extractUniqueAmenitiesFromRooms(data);
     this.extractUniqueCitiesFromRooms(data);
     this.extractUniqueRoomTypesFromRooms(data);
-    this.Raiting(data)
+    this.extractUniqueRaiting(data)
     this.sortObjectForFilterArea()
-    return this.objectForFilterArea // from min to max
+    return this.objectForFilterArea 
   }
 
   private extractUniqueAmenitiesFromRooms(data: any[]) {
@@ -59,9 +59,7 @@ export class FilterService {
     });
   }
 
-
-
-  private Raiting(data: any[]) {
+  private extractUniqueRaiting(data: any[]) {
     data.forEach((item: any) => {
       if (item.rating ) {
         const rating = item.rating;
@@ -73,11 +71,17 @@ export class FilterService {
   }
 
   private sortObjectForFilterArea(): void {
-    // Sort each array property of objectForFilterArea
     Object.keys(this.objectForFilterArea).forEach(key => {
       if (Array.isArray(this.objectForFilterArea[key])) {
         this.objectForFilterArea[key].sort();
       }
     });
   }
+
+  public filterParams(event : any){
+    return Object.entries(event)
+    .filter(([key, value]) => value !== undefined && value !== '' && value !== 'show more +' && value !== 'show less -')
+    .map(([key, value]) => `${key}=${encodeURIComponent(value as string)}`)
+  }
+  
 }

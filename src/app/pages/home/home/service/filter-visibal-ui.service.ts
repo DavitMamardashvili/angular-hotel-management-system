@@ -5,7 +5,7 @@ import { FilterVisibalModel } from '../models/FilterVisibalModel';
   providedIn: 'root'
 })
 export class FilterVisibalUiService {
-
+  
   filterVisibalModel:FilterVisibalModel = new FilterVisibalModel()
 
     toggleDropdown(index: number) {

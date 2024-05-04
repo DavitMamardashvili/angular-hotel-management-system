@@ -11,21 +11,11 @@ import { FilterModel } from '../../models/FilterModel';
 export class FilterComponent {
   @Input() objectForFilterArea: any;
   @Output() filterData: EventEmitter<FilterModel> = new EventEmitter<FilterModel>
-  PriceRange:string = '';
-  showMoreAccommodation:boolean =true;
 
   constructor(public filterSelectedUi :FilterSelectedUiService , public filterVisible:FilterVisibalUiService){}
 
   onFormSubmit() {
   this.filterData.emit(this.filterSelectedUi.filtermodel)
-  }
-
-
-  isSelected(accommodation: any): boolean {
-    return this.filterSelectedUi.filtermodel.roomType.includes(accommodation)
-  }
-  showMore(){
-    this.showMoreAccommodation = !this.showMoreAccommodation;
   }
 
 }

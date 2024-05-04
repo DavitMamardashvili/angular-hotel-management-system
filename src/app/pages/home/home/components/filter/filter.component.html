@@ -7,7 +7,6 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 1"
       >
         <span class="title">Accommodation</span>
-        <!-- <img src="./assets/images/accommodation.png" alt="" /> -->
         <img src="../../../../../../assets/images/filter-images/accommodation_360.png" alt="" />
         <ul
           class="dropdown_ul two-columns wider"
@@ -19,7 +18,7 @@
           *ngFor="let accommodation of (filterVisible.filterVisibalModel.showMoreAccommodation ? objectForFilterArea.roomType.slice(0, 7) : objectForFilterArea.roomType);"
                       class="list_item"
             [attr.data-option]="accommodation"
-            [class.selected]="isSelected(accommodation)"
+            [class.selected]="filterSelectedUi.filtermodel.roomType.includes(accommodation)"
 
           >
             {{ accommodation }}
@@ -43,7 +42,6 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 2"
       >
         <span class="title">rating</span>
-        <!-- <img src="./assets/images/hotelrating.png" alt="" /> -->
         <img src="../../../../../../assets/images/filter-images/hotelrating_360.png" alt="" />
 
         <ul
@@ -65,14 +63,6 @@
             [attr.data-option]="rating"
             *ngFor="let rating of objectForFilterArea.rating"
           >
-            <!-- <img
-              [src]="
-                filterSelectedUi.filtermodel.minRating === rating.toString()
-                  ? './assets/images/star1.png'
-                  : './assets/images/star2.png'
-              "
-              alt=""
-            /> -->
             <img
             src="../../../../../../assets/images/filter-images/star1_360.png"
             alt=""
@@ -90,7 +80,6 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 4"
       >
         <span class="title">amenities</span>
-        <!-- <img src="./assets/images/amenity2.png" alt="" /> -->
         <img src="../../../../../../assets/images/filter-images/amenity2_360.png" alt="" />
         <ul
           class="dropdown_ul two-columns wider"
@@ -131,7 +120,6 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 6"
       >
         <span class="title">Price Range </span>
-        <!-- <img src="./assets/images/priceRange.png" alt="" /> -->
         <img src="../../../../../../assets/images/filter-images/pricerange_360.png" alt="" />
 
         <ul
@@ -169,7 +157,6 @@
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 7"
       >
         <span class="title">Location</span>
-        <!-- <img src="./assets/images/location.png" alt="" /> -->
         <img src="../../../../../../assets/images/filter-images/location_360.png" alt="" />
 
         <ul

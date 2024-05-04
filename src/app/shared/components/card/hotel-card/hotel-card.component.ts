@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, NgZone, OnInit } from '@angular/core';
-import { forkJoin, map } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import {  map } from 'rxjs';
 
 @Component({
   selector: 'app-hotel-card',

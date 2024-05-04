@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FilterService } from './service/filter.service';
-import {  delay, of, switchMap } from 'rxjs';
+import { delay } from 'rxjs';
 import { FilterModel } from './models/FilterModel';
 
 @Component({
@@ -13,19 +13,16 @@ import { FilterModel } from './models/FilterModel';
 export class HomeComponent implements OnInit {
   hotels: any[] = [];
   objectForFilterArea: any;
-  obj: any;
 
-  constructor(private http: HttpClient, private filterService: FilterService, private activatedRoute: ActivatedRoute , private router:Router) { }
-
+  constructor(private http: HttpClient,
+    private filterService: FilterService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) {
+    this.fetchHotels();
+  }
 
   ngOnInit(): void {
-    this.fetchHotels();
-    const delayObservable = of(null).pipe(delay(500));
-    delayObservable.pipe(
-      switchMap(() => this.activatedRoute.queryParams)
-    ).subscribe(params => {
-      this.getFilterData(params);
-    });
+    this.activatedRoute.queryParams.pipe(delay(500)).subscribe(value => this.getFilterData(value));
   }
 
   fetchHotels() {
@@ -34,18 +31,13 @@ export class HomeComponent implements OnInit {
         this.hotels = response;
         this.objectForFilterArea = this.filterService.populateFilterArea(response)
       },
-        (error) => {
-          console.error('Error fetching hotels:', error);
-        }
-      );
+      )
   }
 
   getFilterData(event: any) {
     let baseUrl = 'http://www.airbnb-digital-students.somee.com/api/Apartments/filter';
-    const filteredParams = Object.entries(event)
-      .filter(([key, value]) => value !== undefined && value !== '' && value !== 'show more +' && value !== 'show less -') 
-      .map(([key, value]) => `${key}=${encodeURIComponent(value as string)}`)
-
+    let filteredParams = this.filterService.filterParams(event);
+    
     if (filteredParams.length > 0) {
       baseUrl += '?' + filteredParams.join('&');
     }
@@ -53,17 +45,11 @@ export class HomeComponent implements OnInit {
     this.http.get(baseUrl)
       .subscribe((response: any) => {
         this.hotels = response
-      }, (error: any) => {
-        console.error('Error occurred:', error);
-      });
+      })
   }
 
-  changeQueryParams(data:FilterModel) {
-    const queryParams = Object.entries(data)
-      .filter(([key, value]) => value !== undefined && value !== '')
-      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`);
-
-    const queryString = queryParams.join('&');
+  changeQueryParams(data: FilterModel) {
+    const queryString = this.filterService.filterParams(data).join('&');
     const url = `/home${queryString ? `?${queryString}` : ''}`;
 
     this.router.navigateByUrl(url);
