@@ -23,7 +23,13 @@
     "phonePatternMessage": "Phone number must be 9 digits long",
     "singIn": "Sign In",
     "singInText": "Already have an account?",
-    "forgotPassword": "Forgot Password"
-
-
+    "forgotPassword": "Forgot Password",
+    "userNameRequerdMessage": "Username is required",
+    "personalNumber": "Personal Number",
+    "gender": "gender",
+    "male": "male",
+    "female": "female",
+    "other": "other",
+    "personalNumberRequerdMessage": "Personal number is required",
+    "personalNumberPatternMessage": "Personal number must be 11 digits long"
 }
