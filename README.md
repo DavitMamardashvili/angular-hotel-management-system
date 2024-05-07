@@ -1,41 +1,97 @@
 # AngularHotelManagementSystem
 Angular Hotels System is a web application that serves as an Airbnb analog, allowing users to search for and reserve hotels worldwide. Whether you're planning a vacation, a business trip, or just a weekend getaway, Angular Hotels System provides an intuitive platform to discover accommodations tailored to your needs.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+## Motivation
+
+The motivation behind Angular Hotels System was to create a user-friendly and efficient platform for travelers to explore and book accommodations worldwide. By leveraging Angular's powerful framework, we aimed to develop a robust web application that simplifies the hotel booking process while providing a delightful user experience.
+
+## Features
+- **Search**: Easily find hotels by location, dates, and preferences.
+- **Filtering**: Refine search results based on criteria such as price range, amenities, and ratings.
+- **Booking**: Securely reserve your preferred hotel with a straightforward booking process.
+- **User Authentication**: Create an account or sign in to access additional features and manage your bookings.
+- **Responsive Design**: Enjoy a seamless experience across desktop, tablet, and mobile devices.
 
 ## LIVE DEMO
 ![home](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/d2e4e341-d237-471c-9365-4e2f6f68450f)
 
 # Dependencies
-## Technologies Used
 
-- **Angular**: Frontend framework for building single-page applications
+## Technologies Used
+- **Angular 17**: Frontend framework for building single-page applications
 - **Angular Material**: UI component library for Angular applications
 - **RxJS**: Reactive programming library for handling asynchronous data streams
 - **HTML/CSS**: Markup and styling languages for web development
 - **TypeScript**: Superset of JavaScript that adds optional static typing
 - **Firebase**: Backend-as-a-Service (BaaS) platform for authentication, database, and hosting
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Setup
 
-## Code scaffolding
+Follow these steps to set up the frontend of Angular Hotels System locally:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone the Repository**: 
+    ```bash
+    git clone <repository_url>
+    cd angular-hotels-system
+    ```
 
-## Build
+2. **Install Dependencies**: 
+    ```bash
+    npm install
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Set Up Firebase**:
+    - If you haven't already, sign up for a Firebase account at [Firebase](https://firebase.google.com/).
+    - Create a new Firebase project and set up Firebase Authentication and Firestore (or Realtime Database) as needed.
+    - Copy your Firebase configuration details.
 
-## Running unit tests
+4. **Configure Firebase Credentials**:
+    - Create a file named `environment.ts` in the `src/environments` directory.
+    - Add your Firebase configuration details to the `environment.ts` file:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```typescript
+    export const environment = {
+        production: false,
+        firebase: {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        }
+    };
+    ```
 
-## Running end-to-end tests
+5. **Start the Development Server**:
+    ```bash
+    ng serve
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+6. **Access the Application**:
+    Open your web browser and navigate to `http://localhost:4200/` to access the Angular Hotels System application.
 
-## Further help
+## Routes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular Hotels System consists of the following routes:
+
+- `/home`: Landing page of the application.
+- `/hotel-info/:id`: Page displaying detailed information about a specific hotel.
+- `/auth`: Page for user authentication and authorization.
+- `/not-found`: Page displayed when navigating to a route that doesn't exist.
+
+## Contributing
+
+Contributions to Angular Hotels System are welcome! To contribute, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature`)
+3. Make changes and commit them (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature`)
+5. Create a new Pull Request
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
