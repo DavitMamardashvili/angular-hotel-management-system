@@ -6,8 +6,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## LIVE DEMO
 ![home](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/d2e4e341-d237-471c-9365-4e2f6f68450f)
 
+# Dependencies
+## Technologies Used
 
-
+- **Angular**: Frontend framework for building single-page applications
+- **Angular Material**: UI component library for Angular applications
+- **RxJS**: Reactive programming library for handling asynchronous data streams
+- **HTML/CSS**: Markup and styling languages for web development
+- **TypeScript**: Superset of JavaScript that adds optional static typing
+- **Firebase**: Backend-as-a-Service (BaaS) platform for authentication, database, and hosting
 
 ## Development server
 
