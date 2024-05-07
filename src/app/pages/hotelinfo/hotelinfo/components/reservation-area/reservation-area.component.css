@@ -1,0 +1,165 @@
+.reservation_area {
+    height: 460px;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Increased shadow effect */
+    position: relative;
+  }
+  
+  .calendar {
+    height: 55.5%;
+    width: 40.5%;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Increased shadow effect */
+    position: absolute;
+    top: 2px;
+    left: 3%;
+  }
+  img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  .calendar .X {
+    width: 170px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  
+  .price-area {
+    height: 35.5%;
+    width: 41.5%;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Increased shadow effect */
+    position: absolute;
+    top: 2px;
+    left: 74%;
+    transform: translateX(-50%);
+    padding: 40px 20px 10px;
+  }
+  
+  .price-area hr {
+    margin: 0px;
+  }
+  
+  .price {
+    color: rgb(34, 139, 34);
+  }
+  
+  .btn_reserve {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .details {
+    height: 40%;
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .details .amenities {
+    width: 42%;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .details .amenities hr {
+    margin: 0px 0px 10px;
+    width: 80%;
+  }
+  
+  .details .amenities ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details .amenities ul li {
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .details .contact_info {
+    width: 52%;
+    height: 100%;
+    padding: 10px;
+  
+  }
+  
+  .details .contact_info .rating {
+    text-align: end;
+  }
+  
+  .contact {
+    margin-top: 48px;
+    padding: 5px;
+  }
+  
+  .contact h3 {
+    font-size: 17px;
+  }
+  
+  .host_email .owner_mail {
+    color: blue;
+    font-size: 13px;
+  }
+  
+  hr {
+    margin: 0px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .reservation_area {
+      height: 500px;
+      width: 500px;
+    }
+    .btn_reserve{
+        margin-top: 40px;
+    }
+    .price-area{
+        height: 30.5%;
+        left: 73%;
+        
+    }
+    .calendar {
+        height: 45.5%;
+    }
+  }
+  
+  @media screen and (max-width: 980px) {
+    .reservation_area {
+      margin: auto;
+    }
+  }
+  
+  @media screen and (max-width: 690px) {
+    .reservation_area {
+      height: 500px;
+      width: 400px;
+      margin: auto;
+    }
+  }

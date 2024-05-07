@@ -1,0 +1,110 @@
+<section *ngIf="userInfo">
+    <article>
+        <h2>{{"update"|translate}}</h2>
+        <hr class="custom-hr">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+
+            <div class="example-full-width fullNameArea">
+                <div class="fullName">
+                    <label>{{'firstName'| translate}}</label>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{'firstName'| translate}}</mat-label>
+                        <input type="text" matInput [(ngModel)]="userInfo.firstName" name="firstName" required
+                            pattern="[a-zA-Z]+">
+                        <mat-error *ngIf="validator.checkBaseValue(form, 'firstName') == 1">{{'firstNameRequerdMessage'|
+                            translate}}
+                        </mat-error>
+                        <mat-error *ngIf="validator.checkBaseValue(form, 'firstName') == 3">{{'firstNamePatternMessage'|
+                            translate}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="fullName">
+                    <label>{{'lastName'| translate}}</label>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>{{'lastName'| translate}}</mat-label>
+                        <input type="text" matInput [(ngModel)]="userInfo.lastName" name="lastName" required
+                            pattern="[a-zA-Z]+">
+                        <mat-error *ngIf="validator.checkBaseValue(form, 'lastName') == 1">{{'lastNameRequerdMessage'|
+                            translate}}
+                        </mat-error>
+                        <mat-error *ngIf="validator.checkBaseValue(form, 'lastName') == 3">{{'lastNamePatternMessage'|
+                            translate}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <label>{{'password'| translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'password'| translate}}</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" ngModel name="password" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{8,}$">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'password') == 1">{{'passwordRequerdMessage'|translate}}</mat-error>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'password') == 2">{{'passwordPatternMessage'|translate}}</mat-error>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'password') == 3">{{'simbolsErrorMessage'|translate}}</mat-error>
+            </mat-form-field>
+
+            <label> {{'newPassword'| translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'password'| translate}}</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" ngModel name="newPassword" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{8,}$">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'newPassword') == 1">{{'passwordRequerdMessage'|translate}}</mat-error>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'newPassword') == 2">{{'passwordPatternMessage'|translate}}</mat-error>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'newPassword') == 3">{{'simbolsErrorMessage'|translate}}</mat-error>         
+            </mat-form-field>
+
+            <label> {{'repeatNewPassword' |translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'password'| translate}}</mat-label>
+                <input matInput [type]="hidecConfirmPassword ? 'password' : 'text'" ngModel name="confirmNewPassword"
+                    required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{8,}$">
+                <button mat-icon-button matSuffix (click)="hidecConfirmPassword = !hidecConfirmPassword"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidecConfirmPassword" type="button">
+                    <mat-icon>{{hidecConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'repeatNewPassword') == 1">{{'passwordRequerdMessage'|translate}}</mat-error>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'repeatNewPassword') == 2">{{'passwordPatternMessage'|translate}}</mat-error>
+                <mat-error
+                    *ngIf="validator.checkPasswordValue(form, 'repeatNewPassword') == 3">{{'simbolsErrorMessage'|translate}}</mat-error>
+            </mat-form-field>
+           <p class="mathError" *ngIf="validator.checkPasswordValue(form, 'repeatNewPassword', 'newPassword') == 4">{{'passwordDntMachMessage'|translate}}</p>
+
+
+            <div class="example-full-width phone-input-container">
+                <mat-form-field class="phone-prefix">
+                    <mat-label>Country Code</mat-label>
+                    <input type="text" matInput value="+995" readonly>
+                </mat-form-field>
+                <mat-form-field class="phone-number">
+                    <mat-label>{{'phone'| translate}}</mat-label>
+                    <input type="tel" matInput placeholder="Enter your phone number" [(ngModel)]="userInfo.phoneNumber"
+                        name="phoneNumber" required pattern="[0-9]{9}">
+                    <mat-error *ngIf="validator.checkBaseValue(form, 'phoneNumber') == 1">{{'phoneRequerdMessage'|
+                        translate}}</mat-error>
+                    <mat-error *ngIf="validator.checkBaseValue(form, 'phoneNumber') == 3">{{'phonePatternMessage'|
+                        translate}}</mat-error>
+                </mat-form-field>
+            </div>
+            <button type="submit" class="example-full-width register-button">{{"update"|translate}}</button>
+        </form>
+    </article>
+</section>

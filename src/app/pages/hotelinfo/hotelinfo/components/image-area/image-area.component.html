@@ -1,0 +1,25 @@
+<section class="container">
+    <div class="description">
+        <h2 class="hotel-name"> {{ hotel.name }}, {{ hotel.address.city }}, {{ hotel.address.country }}</h2>
+        <hr>
+        <p class="hotel-description">{{ hotel.description }}</p>
+    </div>
+
+    <article class="hotel_images" (click)="openImageGallery()">
+        <img class="img1" src="{{ hotel?.images?.[0]?.url }}" alt="hotel room img" />
+        <img class="img2" src="{{ hotel?.images?.[1]?.url }}" alt="hotel room img" />
+        <img class="img3" src="{{ hotel?.images?.[2]?.url }}" alt="hotel room img" />
+        <div class="show_all_images">show all images</div>
+    </article>
+
+    <div class="image_gallery_popup" *ngIf="showImageGallery">
+        <div class="popup_overlay" (click)="closeImageGallery()"></div>
+        <div class="popup_content">
+            <h3>Photo tour</h3>
+            <div class="image_container">
+                <img *ngFor="let image of hotel?.images" [src]="image?.url" alt="Gallery Image" />
+            </div>
+            <button class="pop_up_btn" (click)="closeImageGallery()">Close</button>
+        </div> 
+    </div>
+</section>

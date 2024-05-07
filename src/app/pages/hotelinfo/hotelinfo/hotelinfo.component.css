@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    margin: 40px auto;
+    padding: 0px;
+    min-height: 900px;
+}
+.image-area{
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+app-commit-area{
+    margin:0px 20px 0px 20px
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+     flex-direction: column;
+     min-height: 1000px;
+
+    }
+    app-reservation-area {
+        order: 0;
+        margin-bottom: 30px; 
+    }
+
+    app-commit-area {
+        order: 1; 
+    }
+
+
+}

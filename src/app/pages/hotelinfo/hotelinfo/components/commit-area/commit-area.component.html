@@ -1,0 +1,14 @@
+<section class="user_reviews">
+    <h3>User Reviews</h3>
+    <div class="review_form">
+        <textarea [(ngModel)]="newReview" placeholder="You are not authorized to view this content. Please log in to continue."></textarea>
+        <button (click)="addReview()" >Submit Review</button>
+    </div>
+    <div class="review_list">
+        <div *ngFor="let review of userReviews" class="review_item">
+            <p>{{ review }}</p>
+        </div>
+    </div>
+
+    <h4>No reviews yet</h4>
+</section>

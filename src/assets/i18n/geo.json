@@ -20,8 +20,17 @@
     "passwordDntMachMessage":"პაროლები არ ემთხვევა ერთმანეთს",
     "phone":"მობილურის ნომერი",
     "phoneRequerdMessage":"ტელეფონის ნომერი სავალდებულოა",
-    "phonePatternMessage":"ტელეფონი უნდა შედგებოდეს მინიმუმ 9 რიცხვისგან",
+    "phonePatternMessage":"ტელეფონი უნდა შედგებოდეს  9 რიცხვისგან",
     "singIn":"ავტორიზაცია",
     "singInText":"გაიარე რეგისტრაციაზე ?",
-    "forgotPassword":"პაროლის აღდგენა"
+    "forgotPassword":"პაროლის აღდგენა",
+    "userNameRequerdMessage":"მომხმარებლის სახელი სავალდებულოა",
+    "userName":"მომხმარებლის სახელი",
+    "personalNumber":"პირადობის ნომერი",
+    "gender":"სქესი",
+    "male":"კაცი",
+    "female":"ქალი",
+    "other":"სხვა",
+    "personalNumberRequerdMessage": "პირადობის ნომერი სავალდებულოა",
+    "personalNumberPatternMessage": "პირადობის ნომერი შედგებოდეს  11 რიცხვისგან"
 }

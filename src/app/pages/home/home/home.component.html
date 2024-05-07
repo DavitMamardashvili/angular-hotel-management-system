@@ -1,0 +1,5 @@
+<section>
+    <app-filter [objectForFilterArea]="objectForFilterArea" (filterData)="changeQueryParams($event)"></app-filter> 
+    <app-card-area [hotels]="hotels" (hotelIdEmiter)="goToHotelInfo($event)"></app-card-area> 
+</section>
+
