@@ -1,4 +1,5 @@
 # AngularHotelManagementSystem
+Angular Hotels System is a web application that serves as an Airbnb analog, allowing users to search for and reserve hotels worldwide. Whether you're planning a vacation, a business trip, or just a weekend getaway, Angular Hotels System provides an intuitive platform to discover accommodations tailored to your needs.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
