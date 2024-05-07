@@ -15,12 +15,6 @@ export class HeaderComponent  implements OnInit {
     this.lang = localStorage.getItem('lang') || 'eng';
   }
 
-  // changeValue(lang: any) {
-  //   const selectedLanguage = lang.target.value;
-  //   localStorage['lang'] = selectedLanguage;
-  //   this.translateService.use(selectedLanguage);
-  // }
-
   imageUrl: string =
     'https://cdn.iconscout.com/icon/free/png-256/free-airbnb-4-432491.png?f=webp';
 

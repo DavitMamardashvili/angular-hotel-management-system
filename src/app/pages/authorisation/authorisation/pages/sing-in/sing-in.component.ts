@@ -24,7 +24,7 @@ export class SingInComponent {
 
     loginWithSwaggerAPI(email: string, password: string) {
       console.log('Logging in with Swagger API...');
-      this.httpService.post('http://www.airbnb-digital-students.somee.com/api/User/LogIn', {
+      this.httpService.post('api/User/LogIn', {
         email: email,
         password: password
       }).subscribe((response: any) => {
@@ -52,7 +52,7 @@ export class SingInComponent {
         email: form.value.email,
         password: form.value.password
       };
-      this.httpService.post('http://www.airbnb-digital-students.somee.com/api/User/LogIn', requestData)
+      this.httpService.post('api/User/LogIn', requestData)
     .subscribe((response: any) => {
       console.log(response)
       if (response && response.token) {

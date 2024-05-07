@@ -8,6 +8,11 @@ article {
     width: 100%;
   }
 
+  section{
+    padding:  100px 0;
+    box-sizing: border-box;
+  }
+
   h2 {
     text-align: center;
     color: #333;
@@ -55,3 +60,19 @@ article {
     color: #5c9aff;
     text-decoration: underline;
   }
+
+  .mt-4{
+    margin-top: 30px;
+  }
+
+  
+@media only screen and (max-width: 800px){
+  article {
+    max-width: 350px;
+  }
+
+  section{
+    padding:  50px 100;
+  }
+
+}

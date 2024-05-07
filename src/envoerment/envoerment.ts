@@ -1,5 +1,5 @@
 export const envoerment: any = {
-    baseApiUrl:"http://www.airbnb-digital-students.somee.com/api",
+    baseApiUrl:"http://www.airbnb-digital-students.somee.com",
     firebaseConfig: {
         apiKey: "AIzaSyBxmBzzDwWC5dC7ZVmofn0ROuixHZjZThQ",
         authDomain: "aerbnb-afd48.firebaseapp.com",

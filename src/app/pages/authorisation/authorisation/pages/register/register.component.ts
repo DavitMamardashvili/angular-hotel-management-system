@@ -31,7 +31,7 @@ export class RegisterComponent {
       this.firebaseAuthService.registerWhithEmailAndPassword(authInfo)
         .then(() => {
           // If registration is successful, send data to server endpoint
-          this.httpService.post('user/registerUser', registerInfoInstance)
+          this.httpService.post('api/user/registerUser', registerInfoInstance)
             .subscribe(() => {
               Swal.fire({
                 title: "Good job!",

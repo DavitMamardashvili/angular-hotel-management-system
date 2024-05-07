@@ -13,7 +13,7 @@ export class FormValidationService {
     formControlName: string,
     secondPasswordName: string | undefined = undefined
   ): PasswordValidationType {
-    var password = form.controls[formControlName];
+    let password = form.controls[formControlName];
     if (password == undefined || password.touched == false) {
       return PasswordValidationType.passwordIsUndefined;
     }
@@ -25,8 +25,8 @@ export class FormValidationService {
     } else if (password?.errors?.['pattern']) {
       return PasswordValidationType.patternValidation;
     } else if (secondPasswordName != undefined) {
-      var secondPassword = form.controls[secondPasswordName];
-      var secondPasswordValidStatus = this.checkPasswordValue(
+      let secondPassword = form.controls[secondPasswordName];
+      let secondPasswordValidStatus = this.checkPasswordValue(
         form,
         secondPasswordName
       );

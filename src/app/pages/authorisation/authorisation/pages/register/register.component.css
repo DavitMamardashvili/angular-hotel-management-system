@@ -7,6 +7,10 @@ article {
     max-width: 700px;
 }
 
+section{
+    padding: 70px 0;
+    box-sizing: border-box;
+}
 h2 {
     text-align: center;
     color: #333;
@@ -123,6 +127,10 @@ p a:hover {
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         max-width: 95%;
+    }
+
+    section{
+        padding: 50px 20px;
     }
 
     .custom-hr {
