@@ -3,6 +3,14 @@ Angular Hotels System is a web application that serves as an Airbnb analog, allo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
+## LIVE DEMO
+![home](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/d2e4e341-d237-471c-9365-4e2f6f68450f)
+![sing in](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/8735c4b5-7b79-4d69-a34c-22f23c2f0702)
+![hotel info](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/0d493532-c0d1-40ac-82f0-5cf405fd32bb)
+![page_404](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/4218a876-d902-4f98-a760-d1b3540978c9)
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
