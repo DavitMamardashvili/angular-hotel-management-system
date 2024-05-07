@@ -3,8 +3,10 @@
     margin: 40px auto;
     padding: 0px;
     min-height: 900px;
-    
-
+}
+.image-area{
+    padding-top: 30px;
+    box-sizing: border-box;
 }
 app-commit-area{
     margin:0px 20px 0px 20px

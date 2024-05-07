@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     private filterService: FilterService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private http:HttpService) {
+    private http: HttpService) {
     this.fetchHotels();
   }
 
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   fetchHotels() {
-    this.http.getData('get-all-hotels')
+    this.http.getData('get-all-hotels') 
       .subscribe((response: any) => {
         this.hotels = response;
         this.objectForFilterArea = this.filterService.populateFilterArea(response)
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   getFilterData(event: any) {
     let baseUrl = 'api/Apartments/filter';
     let filteredParams = this.filterService.filterParams(event);
-    
+
     if (filteredParams.length > 0) {
       baseUrl += '?' + filteredParams.join('&');
     }
@@ -56,6 +56,8 @@ export class HomeComponent implements OnInit {
 
     this.router.navigateByUrl(url);
   }
-
+  goToHotelInfo(event: any) {
+    this.router.navigate([`hotel-info/id=${event.id}`]);
+  }
 }
 

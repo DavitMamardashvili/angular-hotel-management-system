@@ -59,13 +59,13 @@
     </aside>
     <aside class="price-area">
       <div class="Check-in">
-        <!-- <img src="./assets/images/check-in.png" alt="Check-in" /> -->
+        <img src="./../../../../../../assets/images/hotel-info-images/login_360.png" alt="Check-in" />
         <span>{{ selectedRangeValue?.start | date }}</span>
         <hr>
       </div>
   
       <div class="Check-in">
-        <!-- <img src="./assets/images/check-out.png" alt="Check-out" /> -->
+        <img src="./../../../../../../assets/images/hotel-info-images/out_360.png" alt="Check-out" />
         <span >{{ selectedRangeValue?.end | date }}</span>
         <hr>
       </div>
@@ -84,25 +84,23 @@
         <hr>
         <ul>
           <li *ngFor="let amenity of hotel.rooms[0].amenities">
-            <!-- <img src="./assets/images/service.png" alt="Service icon" /> -->
+            <img src="./../../../../../../assets/images/hotel-info-images/service_360.png" alt="Service icon" />
             <span>{{ amenity }}</span>
           </li>
         </ul>
       </div>
       <div class="contact_info">
         <div class="rating">
-          <!-- <img src="./assets/images/hotel_info_rating.png" alt="Rating" /> -->
-          <span>{{ hotel.rating }} star hotel</span>
+          <span>{{ hotel.rating }} </span>
+          <img src="./../../../../../../assets/images/hotel-info-images/star_360.png" alt="Rating" />
           <hr>
         </div>
         <div class="contact">
           <div class="host_name">
-            <!-- <img src="./assets/images/hotelowner.png" alt="Hotel owner" /> -->
             <h3>Hosted by :{{ hotel.owner.fullName }}</h3>
             <hr>
           </div>
           <div class="host_email">
-            <!-- <img src="./assets/images/mailus.png" alt="Contact us" /> -->
             <h3>Questions? <span class="owner_mail">{{ hotel.owner.email }}</span></h3>
           </div>
         </div>

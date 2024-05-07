@@ -10,11 +10,10 @@ export class ImageAreaComponent {
 
   showImageGallery: boolean = false;
 
-
   openImageGallery() {
     this.showImageGallery = true;
   }
-
+ 
   closeImageGallery() {
     this.showImageGallery = false;
   }

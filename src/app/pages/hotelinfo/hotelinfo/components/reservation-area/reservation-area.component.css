@@ -19,7 +19,11 @@
     top: 2px;
     left: 3%;
   }
-  
+  img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
   .calendar .X {
     width: 170px;
     margin: 0;

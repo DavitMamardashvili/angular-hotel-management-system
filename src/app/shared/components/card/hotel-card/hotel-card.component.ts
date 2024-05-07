@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {  map } from 'rxjs';
+import { HttpService } from '../../../../core/services/http.service';
 
 @Component({
   selector: 'app-hotel-card',
@@ -8,27 +9,21 @@ import {  map } from 'rxjs';
   styleUrl: './hotel-card.component.css'
 })
 export class HotelCardComponent  {
-  @Input() hotel: any;
+  @Input('getHotel') hotel: any;
+  @Output('emitHotel') hotelEmiter :EventEmitter<any> = new EventEmitter()
 
-  constructor(private http:HttpClient){}
+  constructor(private http:HttpService){}
+
   ngOnInit(): void {
     this.hotel.current = 0;
     if (this.hotel.images.length < 4) {
-      this.fetchUnsplashImages(this.hotel, 4 - this.hotel.images.length).subscribe();
+      this.http.fetchUnsplashImages(this.hotel, 4 - this.hotel.images.length).subscribe();
     }
   }
-
-  fetchUnsplashImages(hotel: any, count: number) {
-    const apiKey = 'NVm0woD0X5eU_DCxPFK0_3WcyyVZajPKKlW4-_u548Q';
-    const apiUrl = `https://api.unsplash.com/photos/random?count=${count}&client_id=${apiKey}`;
-    return this.http.get(apiUrl).pipe(
-      map((response: any) => {
-        const unsplashImages = response.map((image: any) => ({
-          url: image.urls.regular,
-        }));
-        hotel.images = [...hotel.images, ...unsplashImages];
-      })
-    );
+  
+  onCardBtnClick(hotel:any){
+    console.log("clicked in btn")
+    this.hotelEmiter.emit(hotel);
   }
 
   next() {

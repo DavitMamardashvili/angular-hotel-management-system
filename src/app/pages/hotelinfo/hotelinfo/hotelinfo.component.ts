@@ -1,39 +1,23 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+import { HttpService } from '../../../core/services/http.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hotelinfo',
   templateUrl: './hotelinfo.component.html',
   styleUrl: './hotelinfo.component.css'
 })
-export class HotelinfoComponent implements OnInit{
-  hotel:any;
+export class HotelinfoComponent {
+  hotel: any;
 
-
-  constructor(private http: HttpClient) { 
-    this.http.get('http://www.airbnb-digital-students.somee.com/get-by-id?id=5').subscribe((response:any) =>{
+  constructor(private httpService: HttpService, private location: Location) { 
+    const currentUrl = this.location.path();
+    const id = currentUrl[currentUrl.length - 1];
+    this.httpService.getData('get-by-id?id=' + id).subscribe((response: any) => {
       this.hotel = response;
+      if (this.hotel.images.length < 8) {
+        this.httpService.fetchUnsplashImages(this.hotel, 8 - this.hotel.images.length).subscribe();
+      }
     })
-  }
-
-  ngOnInit(): void {
-    this.fetchUnsplashImages()
-  }
-
-  fetchUnsplashImages() {
-    const apiKey = 'NVm0woD0X5eU_DCxPFK0_3WcyyVZajPKKlW4-_u548Q';
-    const apiUrl = `https://api.unsplash.com/photos/random?count=10&client_id=${apiKey}`;
-    this.http
-      .get(apiUrl)
-      .pipe(
-        map((response: any) => {
-          const unsplashImages = response.map(
-            (image: any) => image.urls.regular
-          );
-          this.hotel.rooms.roomImages = unsplashImages;
-        })
-      )
-      .subscribe();
   }
 }
