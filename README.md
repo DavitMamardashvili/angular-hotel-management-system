@@ -73,9 +73,9 @@ Follow these steps to set up the frontend of Angular Hotels System locally:
 6. **Access the Application**:
     Open your web browser and navigate to `http://localhost:4200/` to access the Angular Hotels System application.
 
-## Routes
+## Lazy Loading Routes
 
-Angular Hotels System consists of the following routes:
+Angular Hotels System uses lazy loading for optimal performance. The routes are loaded dynamically as needed. Here are the lazy-loaded routes:
 
 - `/home`: Landing page of the application.
 - `/hotel-info/:id`: Page displaying detailed information about a specific hotel.
