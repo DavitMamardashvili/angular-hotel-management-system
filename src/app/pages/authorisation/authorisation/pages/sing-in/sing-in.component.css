@@ -1,0 +1,78 @@
+article {
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+
+  section{
+    padding:  100px 0;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  hr.custom-hr {
+    width: 60%;
+    margin: 20px auto;
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  mat-error {
+    color: red;
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    background-color: #5c9aff;
+    color: #fff;
+  }
+
+  .btn-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .btn-area a {
+    color: #5c9aff;
+    text-decoration: underline;
+  }
+
+  .mt-4{
+    margin-top: 30px;
+  }
+
+  
+@media only screen and (max-width: 800px){
+  article {
+    max-width: 350px;
+  }
+
+  section{
+    padding:  50px 100;
+  }
+
+}

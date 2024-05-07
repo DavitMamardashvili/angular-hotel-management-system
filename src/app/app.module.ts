@@ -11,10 +11,16 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { envoerment } from '../envoerment/envoerment';
 
+import { HeaderComponent } from './navigation/header/header.component';
+import { FooterComponent } from './navigation/footer/footer.component';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +30,7 @@ import { envoerment } from '../envoerment/envoerment';
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatMenuModule,
   
 
     TranslateModule.forRoot(

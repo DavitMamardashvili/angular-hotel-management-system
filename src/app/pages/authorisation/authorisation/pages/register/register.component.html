@@ -1,0 +1,108 @@
+<section>
+    <article>
+        <h2>{{ 'register' | translate }}</h2>
+        <hr class="custom-hr">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <label>{{ 'userName' | translate }}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{ 'userName' | translate }}</mat-label>
+                <input type="text" matInput ngModel name="userName" required pattern="[a-zA-Z ]+">
+            </mat-form-field>
+            <app-error-message [errorMessage]="validator.checkBaseValue(form, 'userName') == 1 ? 
+                ('userNameRequerdMessage' | translate) : null">
+            </app-error-message>
+            <app-error-message [errorMessage]="validator.checkBaseValue(form, 'lastName') == 3 ? 
+                ('lastNamePatternMessage' | translate) : null">
+            </app-error-message>
+
+            <label>{{'email'| translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'email'| translate}}</mat-label>
+                <input type="email" matInput placeholder="{{'email'| translate}}" ngModel name="email" required
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            </mat-form-field>
+            <app-error-message [errorMessage]="validator.checkBaseValue(form, 'email') == 1 ? 
+                ('emailRequerdMessage' | translate) : 
+                (validator.checkBaseValue(form, 'email') == 3 ? 
+                    ('invalidEmailMessage' | translate) : null)">
+            </app-error-message>
+            <label>{{'password'| translate}}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{'password'| translate}}</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" ngModel name="password" required
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{8,}$">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <app-error-message [errorMessage]="validator.checkPasswordValue(form, 'password') == 1 ? 
+                ('passwordRequerdMessage' | translate) : 
+                (validator.checkPasswordValue(form, 'password') == 2 ? 
+                    ('simbolsErrorMessage' | translate) : 
+                    (validator.checkPasswordValue(form, 'password') == 3 ? 
+                        ('passwordPatternMessage' | translate) : null))">
+            </app-error-message>
+            <label>{{ 'confirmPassword' | translate }}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{ 'confirmPassword' | translate }}</mat-label>
+                <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" ngModel name="confirmPassword"
+                    required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d_-]{8,}$">
+                <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword" type="button">
+                    <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <app-error-message [errorMessage]="validator.checkPasswordValue(form, 'confirmPassword') == 1 ? 
+                ('passwordRequerdMessage' | translate) : 
+                (validator.checkPasswordValue(form, 'confirmPassword') == 2 ? 
+                    ('simbolsErrorMessage' | translate) : 
+                    (validator.checkPasswordValue(form, 'confirmPassword') == 3 ? 
+                        ('passwordPatternMessage' | translate) : null))">
+            </app-error-message>
+            <p class="mathError text-end" *ngIf="validator.checkPasswordValue(form, 'confirmPassword', 'password') == 4">
+                {{'passwordDntMachMessage'|translate}}</p>
+
+
+            <label>{{ 'gender' | translate }}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{ 'gender' | translate }}</mat-label>
+                <mat-select ngModel name="gender" required [value]="'male'">
+                    <mat-option value="male">{{ 'male' | translate }}</mat-option>
+                    <mat-option value="female">{{ 'female' | translate }}</mat-option>
+                    <mat-option value="other">{{ 'other' | translate }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <label>{{ 'phone' | translate }}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{ 'phone' | translate }}</mat-label>
+                <input type="tel" matInput placeholder="{{ 'phone' | translate }}" ngModel name="phone" required
+                    pattern="[0-9]{9}">
+            </mat-form-field>
+            <app-error-message [errorMessage]="validator.checkBaseValue(form, 'phone') == 1 ? 
+            ('phoneRequerdMessage' | translate) : null">
+        </app-error-message>
+        <app-error-message [errorMessage]="validator.checkBaseValue(form, 'phone') == 3 ? 
+        ('phonePatternMessage' | translate) : null">
+    </app-error-message>
+
+            <label>{{ 'personalNumber' | translate }}</label>
+            <mat-form-field class="example-full-width">
+                <mat-label>{{ 'personalNumber' | translate }}</mat-label>
+                <input type="text" matInput ngModel name="personalNumber" required pattern="[0-9]{11}">
+            </mat-form-field>
+            <app-error-message [errorMessage]="validator.checkBaseValue(form, 'personalNumber') == 1 ? 
+            ('personalNumberRequerdMessage' | translate) : null">
+        </app-error-message>
+        <app-error-message [errorMessage]="validator.checkBaseValue(form, 'personalNumber') == 3 ? 
+        ('personalNumberPatternMessage' | translate) : null">
+    </app-error-message>
+    
+
+            <button type="submit" class="example-full-width register-button">{{ 'register' | translate }}</button>
+        </form>
+
+        <p>{{ 'singInText' | translate }}<a mat-button routerLink="/auth">{{ 'singIn' | translate }}</a></p>
+    </article>
+</section>
