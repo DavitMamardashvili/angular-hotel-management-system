@@ -1,0 +1,111 @@
+<!-- <section class="reservation_details">
+<mat-calendar [selected]="selectedRangeValue" (selectedChange)="selectedChange($event)"></mat-calendar>
+
+<div class="check_in_out_info">
+  <div>
+    <div>
+      <img src="./assets/images/check-in.png" alt="Check-in" />
+      <span>{{ selectedRangeValue?.start | date }}</span>
+    </div>
+    <div>
+      <img src="./assets/images/check-out.png" alt="Check-out" />
+      <span>{{ selectedRangeValue?.end | date }}</span>
+    </div>
+  </div>
+  <div class="price_and_reserve">
+    <button class="btn_reserve">Reserve</button>
+    <div class="total_price">
+      <span class="price_shape">Price <strong>{{ calculateTotalPrice().totalPrice | currency }}</strong></span>
+    </div>
+  </div>
+</div>
+
+
+  <div class="place_advantages">
+    <div class="rating">
+      <img src="./assets/images/hotel_info_rating.png" alt="Rating" />
+      <span>{{ hotel.rating }} star hotel</span>
+    </div>
+    <div class="room_type">
+      <img src="./assets/images/roomtype.png" alt="Room type" />
+      <span>{{ hotel.rooms[0].roomType }}</span>
+    </div>
+  </div>
+  <section class="amenities">
+    <h3>Services</h3>
+    <ul>
+      <li *ngFor="let amenity of hotel.rooms[0].amenities">
+        <img src="./assets/images/service.png" alt="Service icon" />
+        <span>{{ amenity }}</span>
+      </li>
+    </ul>
+  </section>
+  <section class="hotel_owner">
+    <div>
+      <img src="./assets/images/hotelowner.png" alt="Hotel owner" />
+      <h3>Hosted by {{ hotel.owner.fullName }}</h3>
+    </div>
+    <div>
+      <img src="./assets/images/mailus.png" alt="Contact us" />
+      <h4>Questions? <span class="owner_mail">{{ hotel.owner.email }}</span></h4>
+    </div>
+  </section>
+</section> -->
+
+
+<section class="reservation_area">
+    <aside class="calendar">
+      <mat-calendar [selected]="selectedRangeValue" (selectedChange)="selectedChange($event)" class="X"></mat-calendar>
+    </aside>
+    <aside class="price-area">
+      <div class="Check-in">
+        <!-- <img src="./assets/images/check-in.png" alt="Check-in" /> -->
+        <span>{{ selectedRangeValue?.start | date }}</span>
+        <hr>
+      </div>
+  
+      <div class="Check-in">
+        <!-- <img src="./assets/images/check-out.png" alt="Check-out" /> -->
+        <span >{{ selectedRangeValue?.end | date }}</span>
+        <hr>
+      </div>
+  
+      <div class="price_and_reserve">
+        <div class="total_price">
+          <span class="price_shape">Price <strong class="price">{{ calculateTotalPrice().totalPrice | currency }}</strong></span>
+          <hr>
+        </div>
+        <button class="btn_reserve">Reserve</button>
+      </div>
+    </aside>
+    <aside class="details">
+      <div class="amenities">
+        <h3>Services</h3>
+        <hr>
+        <ul>
+          <li *ngFor="let amenity of hotel.rooms[0].amenities">
+            <!-- <img src="./assets/images/service.png" alt="Service icon" /> -->
+            <span>{{ amenity }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="contact_info">
+        <div class="rating">
+          <!-- <img src="./assets/images/hotel_info_rating.png" alt="Rating" /> -->
+          <span>{{ hotel.rating }} star hotel</span>
+          <hr>
+        </div>
+        <div class="contact">
+          <div class="host_name">
+            <!-- <img src="./assets/images/hotelowner.png" alt="Hotel owner" /> -->
+            <h3>Hosted by :{{ hotel.owner.fullName }}</h3>
+            <hr>
+          </div>
+          <div class="host_email">
+            <!-- <img src="./assets/images/mailus.png" alt="Contact us" /> -->
+            <h3>Questions? <span class="owner_mail">{{ hotel.owner.email }}</span></h3>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
