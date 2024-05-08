@@ -1,20 +1,16 @@
 .reservation_area {
     height: 460px;
     width: 600px;
-    border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Increased shadow effect */
     position: relative;
   }
   
   .calendar {
     height: 55.5%;
     width: 40.5%;
-    border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Increased shadow effect */
     position: absolute;
     top: 2px;
     left: 3%;
@@ -34,10 +30,8 @@
   .price-area {
     height: 35.5%;
     width: 41.5%;
-    border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Increased shadow effect */
     position: absolute;
     top: 2px;
     left: 74%;
@@ -68,7 +62,6 @@
   .details {
     height: 40%;
     width: 95%;
-    border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -146,7 +139,7 @@
         
     }
     .calendar {
-        height: 45.5%;
+        height: 47.5%;
     }
   }
   
@@ -154,6 +147,9 @@
     .reservation_area {
       margin: auto;
     }
+    .calendar {
+      height: 47.5%;
+  }
   }
   
   @media screen and (max-width: 690px) {
@@ -162,4 +158,12 @@
       width: 400px;
       margin: auto;
     }
+    .calendar {
+      height: 48.5%;
+      width: 43.5%;
+  }
+  .price-area {
+    height: 35.5%;
+    width: 39.5%;
+  }
   }
