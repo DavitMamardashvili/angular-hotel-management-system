@@ -6,7 +6,7 @@
         (click)="filterVisible.toggleDropdown(1)"
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 1"
       >
-        <span class="title">Accommodation</span>
+        <span class="title">{{'Accommodation' | translate}}</span>
         <img src="../../../../../../assets/images/filter-images/accommodation_360.png" alt="" />
         <ul
           class="dropdown_ul two-columns wider"
@@ -41,7 +41,7 @@
         (click)="filterVisible.toggleDropdown(2)"
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 2"
       >
-        <span class="title">rating</span>
+        <span class="title">{{'Rating' | translate}}</span>
         <img src="../../../../../../assets/images/filter-images/hotelrating_360.png" alt="" />
 
         <ul
@@ -79,7 +79,7 @@
         (click)="filterVisible.toggleDropdown(4)"
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 4"
       >
-        <span class="title">amenities</span>
+        <span class="title">{{'Amenities' | translate}}</span>
         <img src="../../../../../../assets/images/filter-images/amenity2_360.png" alt="" />
         <ul
           class="dropdown_ul two-columns wider"
@@ -119,7 +119,7 @@
         (click)="filterVisible.toggleDropdown(6)"
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 6"
       >
-        <span class="title">Price Range </span>
+        <span class="title">{{'PriceRange' | translate}} </span>
         <img src="../../../../../../assets/images/filter-images/pricerange_360.png" alt="" />
 
         <ul
@@ -156,7 +156,7 @@
         (click)="filterVisible.toggleDropdown(7)"
         [class.show-background]="filterVisible.filterVisibalModel.activeDropdown === 7"
       >
-        <span class="title">Location</span>
+        <span class="title">{{'Location' | translate}}</span>
         <img src="../../../../../../assets/images/filter-images/location_360.png" alt="" />
 
         <ul
@@ -184,6 +184,6 @@
           </li>
         </ul>
       </span>
-      <button class="search" (click)="onFormSubmit()">search</button>
+      <button class="search" (click)="onFormSubmit()">{{'Search' | translate}}</button>
     </form>
   </section>

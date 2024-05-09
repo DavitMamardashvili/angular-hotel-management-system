@@ -9,7 +9,7 @@
         <img class="img1" src="{{ hotel?.images?.[0]?.url }}" alt="hotel room img" />
         <img class="img2" src="{{ hotel?.images?.[1]?.url }}" alt="hotel room img" />
         <img class="img3" src="{{ hotel?.images?.[2]?.url }}" alt="hotel room img" />
-        <div class="show_all_images">show all images</div>
+        <div class="show_all_images">{{'show all images' | translate}}</div>
     </article>
 
     <div class="image_gallery_popup" *ngIf="showImageGallery">
@@ -19,7 +19,7 @@
             <div class="image_container">
                 <img *ngFor="let image of hotel?.images" [src]="image?.url" alt="Gallery Image" />
             </div>
-            <button class="pop_up_btn" (click)="closeImageGallery()">Close</button>
+            <button class="pop_up_btn" (click)="closeImageGallery()">{{'Close' | translate}}</button>
         </div> 
     </div>
 </section>

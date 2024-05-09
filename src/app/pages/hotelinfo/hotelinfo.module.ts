@@ -8,6 +8,7 @@ import { HotelinfoRoutingModule } from './hotelinfo-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {  TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -23,7 +24,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     HotelinfoRoutingModule, 
     FormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    TranslateModule
   ]
 })
 export class HotelinfoModule { }

@@ -63,7 +63,7 @@
         <strong>
             <span class="price"></span> {{ hotel.rooms?.[0]?.pricePerNight }}
         </strong>
-        night
+        {{'night' | translate}}
     </div>
-    <button class="reserve_btn" (click)="onCardBtnClick(hotel)">reserve now</button>
+    <button class="reserve_btn" (click)="onCardBtnClick(hotel)">{{'reserveNow' | translate}}</button>
 </div>

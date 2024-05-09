@@ -6,6 +6,7 @@ import { FilterComponent } from './home/components/filter/filter.component';
 import { CardAreaComponent } from './home/components/card-area/card-area.component';
 import { HotelCardComponent } from '../../shared/components/card/hotel-card/hotel-card.component';
 import { FormsModule } from '@angular/forms';
+import {  TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ]
 })
 export class HomeModule { }
