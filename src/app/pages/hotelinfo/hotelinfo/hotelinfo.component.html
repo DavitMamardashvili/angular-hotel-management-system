@@ -1,7 +1,12 @@
-<section class="image-area">
-    <app-image-area [hotel]="hotel"></app-image-area>
-</section>
-<section class="container">
-    <app-commit-area></app-commit-area>
-    <app-reservation-area [hotel]="hotel"></app-reservation-area>
+<section>
+    <article class="image-area">
+        <app-image-area [hotel]="hotel"></app-image-area>
+    </article>>
+    <article class="container">
+        <app-location></app-location>
+        <app-reservation-area [hotel]="hotel"></app-reservation-area>
+    </article>>
+    <article>
+        <app-commit-area></app-commit-area>
+    </article>
 </section>

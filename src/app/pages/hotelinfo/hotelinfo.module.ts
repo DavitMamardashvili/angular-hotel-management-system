@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {  TranslateModule } from '@ngx-translate/core';
+import { LocationComponent } from './hotelinfo/components/location/location.component';
 
 
 
@@ -17,7 +18,8 @@ import {  TranslateModule } from '@ngx-translate/core';
     HotelinfoComponent,
     ImageAreaComponent,
     ReservationAreaComponent,
-    CommitAreaComponent
+    CommitAreaComponent,
+    LocationComponent
   ],
   imports: [
     CommonModule,

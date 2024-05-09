@@ -4,7 +4,8 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 700px;
+    width: 90%;
+    margin: auto;
   }
   
   .user_reviews h3 {
@@ -42,17 +43,11 @@
   .review_item {
     margin-bottom: 10px;
     background-color: #f0f0f0;
-    /* Light gray background color */
     padding: 10px;
-    /* Add padding for better spacing */
     border-radius: 5px;
-    /* Add border radius for rounded corners */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    /* Add a subtle shadow */
     color: #333;
-    /* Text color */
   }
-  
   
   .review_item p {
     margin: 0;
@@ -62,7 +57,6 @@
     font-style: italic;
     color: #999;
   }
-  
   
   .user_reviews h3 {
     font-size: 1.5em;
@@ -115,21 +109,3 @@
   }
   
   
-  @media screen and (max-width: 1400px) {
-    .user_reviews {
-      width: 500px;
-    }
-  }
-  
-  @media screen and (max-width: 1120px) {
-    .user_reviews {
-      width: 350px;
-    }}
-  
-  
-    @media screen and (max-width: 980px) {
-      .user_reviews {
-        margin: auto;
-        width: 90%;
-      }
-    }

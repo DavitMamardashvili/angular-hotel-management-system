@@ -2,17 +2,18 @@
     display: flex;
     margin: 40px auto;
     padding: 0px;
-    min-height: 900px;
+    align-items: center;
+    justify-content: space-around;
 }
 .image-area{
     padding-top: 30px;
     box-sizing: border-box;
 }
-app-commit-area{
+app-location{
     margin:0px 20px 0px 20px
-}
+} 
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1130px) {
     .container {
      flex-direction: column;
      min-height: 1000px;
@@ -23,9 +24,8 @@ app-commit-area{
         margin-bottom: 30px; 
     }
 
-    app-commit-area {
+    app-location{
         order: 1; 
+
     }
-
-
 }
