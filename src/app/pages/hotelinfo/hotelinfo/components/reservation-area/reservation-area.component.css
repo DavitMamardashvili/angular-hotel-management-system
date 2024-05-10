@@ -112,10 +112,9 @@
     padding: 5px;
   }
   
-  .contact h3 {
-    font-size: 17px;
+  .hosted_by{
+    font-size: 15px;
   }
-  
   .host_email .owner_mail {
     color: blue;
     font-size: 13px;
