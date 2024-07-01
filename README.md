@@ -13,8 +13,7 @@ The motivation behind Angular Hotels System was to create a user-friendly and ef
 - **Responsive Design**: Enjoy a seamless experience across desktop, tablet, and mobile devices.
 
 ## LIVE DEMO
-![home](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/d2e4e341-d237-471c-9365-4e2f6f68450f)
-
+![Screenshot_39](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/8a60a209-c064-485d-8580-da6e20f48905)
 # Dependencies
 
 ## Technologies Used
