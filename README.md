@@ -12,8 +12,6 @@ The motivation behind Angular Hotels System was to create a user-friendly and ef
 - **User Authentication**: Create an account or sign in to access additional features and manage your bookings.
 - **Responsive Design**: Enjoy a seamless experience across desktop, tablet, and mobile devices.
 
-## LIVE DEMO
-![Screenshot_39](https://github.com/DavitMamardashvili/angular-hotel-management-system/assets/133438090/8a60a209-c064-485d-8580-da6e20f48905)
 # Dependencies
 
 ## Technologies Used
